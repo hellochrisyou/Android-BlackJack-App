@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundmario"
+    tools:context="com.example.chris.bj_final.MainActivity">
+
+    <TextView
+        android:id="@+id/viewBank"
+        android:layout_width="50dp"
+        android:layout_height="16dp"
+        android:layout_marginBottom="-5dp"
+        android:layout_marginLeft="14dp"
+        android:background="@android:color/background_light"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintLeft_toRightOf="@+id/imageView3"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/viewDealerSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Dealer Sum:"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Dealer Sum:" />
+
+    <TextView
+        android:id="@+id/viewDealerCard1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Dealer Card"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Dealer Card" />
+
+    <TextView
+        android:id="@+id/viewDealerCard2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Dealer Card"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+        app:layout_constraintRight_toLeftOf="@+id/viewDealerHitCard"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Dealer Card" />
+
+    <TextView
+        android:id="@+id/viewDealerHitCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="16dp"
+        android:text="Dealer Hit Card:"
+        android:textAlignment="center"
+        app:layout_constraintRight_toLeftOf="@+id/viewDealerSum"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Dealer Hit Card:" />
+
+    <TextView
+        android:id="@+id/viewCard1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="1dp"
+        android:text="Card"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="@+id/viewDealerCard1"
+        app:layout_constraintRight_toRightOf="@+id/viewDealerCard1"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:text="Card" />
+
+    <TextView
+        android:id="@+id/viewHitCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:text="Hit Card:"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintLeft_toLeftOf="@+id/viewDealerHitCard"
+        app:layout_constraintRight_toRightOf="@+id/viewDealerHitCard"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:text="Hit Card:" />
+
+    <TextView
+        android:id="@+id/viewCard2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="1dp"
+        android:text="Card"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="@+id/viewDealerCard2"
+        app:layout_constraintRight_toRightOf="@+id/viewDealerCard2"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:text="Card" />
+
+    <TextView
+        android:id="@+id/viewSplitHitCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:text="Split Hit Card:"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/viewDealerHitCard"
+        app:layout_constraintRight_toRightOf="@+id/viewDealerHitCard"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:text="Split Hit Card:" />
+
+    <TextView
+        android:id="@+id/viewCardSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="1dp"
+        android:text="Card Sum:"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="@+id/viewDealerSum"
+        app:layout_constraintRight_toRightOf="@+id/viewDealerSum"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:text="Card Sum:" />
+
+    <TextView
+        android:id="@+id/viewSplitSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:text="Split Sum:"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintLeft_toLeftOf="@+id/viewCardSum"
+        app:layout_constraintRight_toRightOf="@+id/viewCardSum"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:text="Split Sum:" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="33dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="88dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="106dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="161dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:textAlignment="center"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="233dp" />
+
+    <TextView
+        android:id="@+id/textViewDealerHitCard"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintLeft_toLeftOf="@+id/viewDealerHitCard"
+        app:layout_constraintRight_toRightOf="@+id/viewDealerHitCard"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        tools:text="AAAAAAAA" />
+
+    <TextView
+        android:id="@+id/textViewHitCard"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="3dp"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewDealerHitCard"
+        app:layout_constraintRight_toRightOf="@+id/textViewDealerHitCard"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:text="AAAAAAAA" />
+
+    <TextView
+        android:id="@+id/textviewSplitHitCard"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewHitCard"
+        app:layout_constraintRight_toRightOf="@+id/textViewHitCard"
+        app:layout_constraintTop_toBottomOf="@+id/viewSplitHitCard"
+        tools:text="AAAAAAAA" />
+
+    <ImageView
+        android:id="@+id/imageViewMarioJumping"
+        android:layout_width="45dp"
+        android:layout_height="41dp"
+        app:srcCompat="@drawable/mariojumping"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/imageViewCoin"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/imageViewCoin"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="132dp" />
+
+    <ImageView
+        android:id="@+id/imageViewCoin"
+        android:layout_width="43dp"
+        android:layout_height="39dp"
+        app:srcCompat="@drawable/coin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintRight_toLeftOf="@+id/guideline6"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.463"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewMarioJumping" />
+
+    <Button
+        android:id="@+id/buttonDoubleDown"
+        android:layout_width="119dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttons"
+        android:onClick="onClickDoubleDown"
+        android:text="Double Down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/buttonHit"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Double Down"
+        tools:layout_editor_absoluteX="151dp" />
+
+    <Button
+        android:id="@+id/buttonNewGame"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttons"
+        android:onClick="onClickNewGame"
+        android:text="New Game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="New Game" />
+
+    <Button
+        android:id="@+id/buttonsplit"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/buttons"
+        android:onClick="onClickSplit"
+        android:text="Split"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="@+id/guideline13"
+        tools:text="Split"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNewGame" />
+
+    <Button
+        android:id="@+id/buttonHit"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/buttons"
+        android:onClick="onClickHit"
+        android:text="Hit"
+        app:layout_constraintRight_toLeftOf="@+id/buttonsplit"
+        tools:text="Hit"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDoubleDown" />
+
+    <Button
+        android:id="@+id/buttonStay"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="91dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/buttons"
+        android:onClick="onClickStay"
+        android:text="Stay"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/buttonHit"
+        tools:text="Stay"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDoubleDown" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline9"
+        app:layout_constraintGuide_begin="447dp"
+        android:orientation="horizontal" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline10"
+        app:layout_constraintGuide_begin="399dp"
+        android:orientation="horizontal" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline11"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="114dp" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline12"
+        app:layout_constraintGuide_begin="281dp"
+        android:orientation="horizontal" />
+
+    <TextView
+        android:id="@+id/textViewDealerCard1"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="-17dp"
+        android:background="@drawable/card"
+        android:text="10"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/viewDealerCard1"
+        app:layout_constraintRight_toRightOf="@+id/viewDealerCard1"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/textViewDealerCard2"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="-3dp"
+        android:background="@drawable/card"
+        android:text="10"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintLeft_toLeftOf="@+id/viewDealerCard2"
+        app:layout_constraintRight_toRightOf="@+id/viewDealerCard2"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/textViewDealerSum"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/card"
+        android:text="10"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintLeft_toLeftOf="@+id/viewDealerSum"
+        app:layout_constraintRight_toRightOf="@+id/viewDealerSum"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/textViewCard2"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/card"
+        android:text="10"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewDealerCard2"
+        app:layout_constraintRight_toRightOf="@+id/textViewDealerCard2"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/textViewCard1"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="-7dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/card"
+        android:text="10"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewDealerCard1"
+        app:layout_constraintRight_toRightOf="@+id/textViewDealerCard1"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/textViewCardSum"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/card"
+        android:text="10"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewDealerSum"
+        app:layout_constraintRight_toRightOf="@+id/textViewDealerSum"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/textViewSplitSum"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/card"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewCardSum"
+        app:layout_constraintRight_toRightOf="@+id/textViewCardSum"
+        app:layout_constraintTop_toBottomOf="@+id/viewSplitSum" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline13"
+        app:layout_constraintGuide_begin="399dp"
+        android:orientation="horizontal" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/bank"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMinus"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline6" />
+
+    <Button
+        android:id="@+id/buttonMinus"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/mathbutton"
+        android:onClick="onClickMinus"
+        android:text="-"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+        tools:text="-"
+        android:layout_marginTop="13dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlus"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintVertical_bias="0.583" />
+
+    <Button
+        android:id="@+id/buttonPlus"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/mathbutton"
+        android:onClick="onClickPlus"
+        android:text="+"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:text="+"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBet" />
+
+    <TextView
+        android:id="@+id/textViewBet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bet:"
+        tools:text="Bet:"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/viewbetAmount"
+        android:layout_width="50dp"
+        android:layout_height="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/background_light"
+        android:text="10"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonMinus"
+        app:layout_constraintLeft_toRightOf="@+id/buttonPlus"
+        app:layout_constraintTop_toTopOf="@+id/buttonPlus"
+        app:layout_constraintVertical_bias="0.142"
+        tools:text="10" />
+
+</android.support.constraint.ConstraintLayout>
