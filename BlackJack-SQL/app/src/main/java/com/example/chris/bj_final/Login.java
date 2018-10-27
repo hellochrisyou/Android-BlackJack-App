@@ -24,63 +24,63 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Login extends AppCompatActivity {
- DatabaseHelper mDatabaseHelper;
- EditText editTextUserName;
- SQLiteDatabase db;
+    DatabaseHelper mDatabaseHelper;
+    EditText editTextUserName;
+    SQLiteDatabase db;
 
- RecyclerView login;
- RecyclerView.LayoutManager layoutManager;
- RecyclerView.Adapter listAdapter;
- ArrayList < ListItemLogin > arrayList = new ArrayList < > ();
+    RecyclerView login;
+    RecyclerView.LayoutManager layoutManager;
+    RecyclerView.Adapter listAdapter;
+    ArrayList < ListItemLogin > arrayList = new ArrayList < > ();
 
- protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_login);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-  editTextUserName = (EditText) findViewById(R.id.editTextUser);
-  mDatabaseHelper = new DatabaseHelper(this);
-  login = (RecyclerView) findViewById(R.id.loginRecyclerView);
-  layoutManager = new LinearLayoutManager(this);
-  login.setLayoutManager(layoutManager);
-  login.setHasFixedSize(true);
+        editTextUserName = (EditText) findViewById(R.id.editTextUser);
+        mDatabaseHelper = new DatabaseHelper(this);
+        login = (RecyclerView) findViewById(R.id.loginRecyclerView);
+        layoutManager = new LinearLayoutManager(this);
+        login.setLayoutManager(layoutManager);
+        login.setHasFixedSize(true);
 
-  BackgroundTask backgroundTask = new BackgroundTask(Login.this);
-  backgroundTask.execute();
+        BackgroundTask backgroundTask = new BackgroundTask(Login.this);
+        backgroundTask.execute();
 
-  populateListView();
- }
+        populateListView();
+    }
 
- private void populateListView() {
+    private void populateListView() {
 
-  db = mDatabaseHelper.getReadableDatabase();
+        db = mDatabaseHelper.getReadableDatabase();
 
-  Cursor cursor = mDatabaseHelper.getInfo(db);
+        Cursor cursor = mDatabaseHelper.getInfo(db);
 
-  cursor.moveToFirst();
-  do {
-   ListItemLogin tmpList = new ListItemLogin(cursor.getString(0), cursor.getInt(1));
-   arrayList.add(tmpList);
-  } while (cursor.moveToNext());
-  db.close();
+        cursor.moveToFirst();
+        do {
+            ListItemLogin tmpList = new ListItemLogin(cursor.getString(0), cursor.getInt(1));
+            arrayList.add(tmpList);
+        } while (cursor.moveToNext());
+        db.close();
 
-  listAdapter = new ListAdapterLogin(arrayList);
-  login.setAdapter(listAdapter);
- }
+        listAdapter = new ListAdapterLogin(arrayList);
+        login.setAdapter(listAdapter);
+    }
 
- public void onClickCreate(View view) {
-  db = mDatabaseHelper.getWritableDatabase();
-  String userName = editTextUserName.getText().toString().trim(); //trim name
+    public void onClickCreate(View view) {
+        db = mDatabaseHelper.getWritableDatabase();
+        String userName = editTextUserName.getText().toString().trim(); //trim name
 
-  if (TextUtils.isEmpty(userName)) {
-   Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
-   return;
-  }
-  ContentValues contentValues = new ContentValues();
-  contentValues.put(BlackJackContract.BlackJackEntry.COLUMN_NAME, userName);
-  contentValues.put(BlackJackContract.BlackJackEntry.COLUMN_HS, 0);
-  db.insert(BlackJackContract.BlackJackEntry.TABLE_NAME, null, contentValues);
-  Toast.makeText(this, "User Added", Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(userName)) {
+            Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
+            return;
+        }
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(BlackJackContract.BlackJackEntry.COLUMN_NAME, userName);
+        contentValues.put(BlackJackContract.BlackJackEntry.COLUMN_HS, 0);
+        db.insert(BlackJackContract.BlackJackEntry.TABLE_NAME, null, contentValues);
+        Toast.makeText(this, "User Added", Toast.LENGTH_LONG).show();
 
-  populateListView();
- }
+        populateListView();
+    }
 }
