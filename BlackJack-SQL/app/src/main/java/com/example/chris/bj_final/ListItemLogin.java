@@ -5,31 +5,31 @@ package com.example.chris.bj_final;
  */
 
 public class ListItemLogin {
-    public String name;
-    public int highScore;
+ public String name;
+ public int highScore;
 
-    public ListItemLogin(){
-        //empty
-    }
+ public ListItemLogin() {
+  //empty
+ }
 
-    public ListItemLogin (String name, int highScore){
-        this.setName(name);
-        this.setHighScore(highScore);
-    }
+ public ListItemLogin(String name, int highScore) {
+  this.setName(name);
+  this.setHighScore(highScore);
+ }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+ public void setName(String name) {
+  this.name = name;
+ }
 
-    public void setHighScore(int highScore) {
-        this.highScore = highScore;
-    }
+ public void setHighScore(int highScore) {
+  this.highScore = highScore;
+ }
 
-    public String getName() {
-        return name;
-    }
+ public String getName() {
+  return name;
+ }
 
-    public int getHighScore() {
-        return highScore;
-    }
+ public int getHighScore() {
+  return highScore;
+ }
 }

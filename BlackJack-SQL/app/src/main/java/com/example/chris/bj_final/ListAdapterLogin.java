@@ -16,48 +16,47 @@ import java.util.List;
  * Created by chris on 9/9/2017.
  */
 
-public class ListAdapterLogin extends RecyclerView.Adapter<ListAdapterLogin.ViewHolder>{
-    ArrayList<ListItemLogin> itemLists = new ArrayList<>();
-    ListAdapterLogin(ArrayList<ListItemLogin> arrayList){
-        this.itemLists = arrayList;
-    }
-    private Context context;
-    private Context pref;
+public class ListAdapterLogin extends RecyclerView.Adapter < ListAdapterLogin.ViewHolder > {
+ ArrayList < ListItemLogin > itemLists = new ArrayList < > ();
+ ListAdapterLogin(ArrayList < ListItemLogin > arrayList) {
+  this.itemLists = arrayList;
+ }
+ private Context context;
+ private Context pref;
 
-    public ListAdapterLogin(ArrayList<ListItemLogin> itemLists, Context context) {
-        this.itemLists = itemLists;
-        this.context = context;
-    }
+ public ListAdapterLogin(ArrayList < ListItemLogin > itemLists, Context context) {
+  this.itemLists = itemLists;
+  this.context = context;
+ }
 
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_login,parent,false);
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
-    }
+ @Override
+ public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+  View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_login, parent, false);
+  ViewHolder viewHolder = new ViewHolder(v);
+  return viewHolder;
+ }
 
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        ListItemLogin listItemLogin = itemLists.get(position);
+ @Override
+ public void onBindViewHolder(ViewHolder holder, int position) {
+  ListItemLogin listItemLogin = itemLists.get(position);
 
-        holder.textName.setText(listItemLogin.getName());
-        holder.textHighScore.setText(Integer.toString(listItemLogin.getHighScore()));
-    }
+  holder.textName.setText(listItemLogin.getName());
+  holder.textHighScore.setText(Integer.toString(listItemLogin.getHighScore()));
+ }
 
-    @Override
-    public int getItemCount() {
-        return itemLists.size();
-    }
+ @Override
+ public int getItemCount() {
+  return itemLists.size();
+ }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView textName, textHighScore;
+ public class ViewHolder extends RecyclerView.ViewHolder {
+  TextView textName, textHighScore;
 
-        ViewHolder(View itemView) {
-            super(itemView);
+  ViewHolder(View itemView) {
+   super(itemView);
 
-            textName = itemView.findViewById(R.id.textViewUser);
-            textHighScore = itemView.findViewById(R.id.textViewHighScore);
-        }
-    }
+   textName = itemView.findViewById(R.id.textViewUser);
+   textHighScore = itemView.findViewById(R.id.textViewHighScore);
+  }
+ }
 }
-
