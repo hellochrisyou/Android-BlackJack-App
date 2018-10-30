@@ -16,15 +16,15 @@ import java.util.List;
  * Created by chris on 9/9/2017.
  */
 
-public class ListAdapterLogin extends RecyclerView.Adapter < ListAdapterLogin.ViewHolder > {
+public class listAdapterLogin extends RecyclerView.Adapter < listAdapterLogin.ViewHolder > {
     ArrayList < ListItemLogin > itemLists = new ArrayList < > ();
-    ListAdapterLogin(ArrayList < ListItemLogin > arrayList) {
+    listAdapterLogin(ArrayList < ListItemLogin > arrayList) {
         this.itemLists = arrayList;
     }
     private Context context;
     private Context pref;
 
-    public ListAdapterLogin(ArrayList < ListItemLogin > itemLists, Context context) {
+    public listAdapterLogin(ArrayList < ListItemLogin > itemLists, Context context) {
         this.itemLists = itemLists;
         this.context = context;
     }

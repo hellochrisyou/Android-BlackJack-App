@@ -10,7 +10,7 @@ public final class BlackJackContract {
     private BlackJackContract() {}
 
         public static final class BlackJackEntry implements BaseColumns {
-            public final static String TABLE_NAME = "blackjack";
+            public final static String TABLE_NAME = "Blackjack";
 
             public final static String COLUMN_NAME = "Name";
 
