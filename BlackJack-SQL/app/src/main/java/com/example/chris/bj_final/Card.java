@@ -9,11 +9,11 @@ public class Card {
     String faceValue;
     boolean softAce = false;
 
-    int getValue() {
+    int GetValue() {
         return this.value;
     }
 
-    void setValue(int value) {
+    void SetValue(int value) {
         //faceCards
         if (value == 11) {
             this.value = 10;

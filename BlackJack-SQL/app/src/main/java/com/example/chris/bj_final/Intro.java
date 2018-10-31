@@ -23,7 +23,7 @@ public class Intro extends AppCompatActivity {
 
     }
 
-    public void onClickStart(View view) {
+    public void OnClickStart(View view) {
         //Run splash activity in a separate thread, wait 2 sec, and terminate
         if (clicked == false) {
             Thread timer = new Thread() {

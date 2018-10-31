@@ -47,10 +47,10 @@ public class Login extends AppCompatActivity {
         BackgroundTask backgroundTask = new BackgroundTask(Login.this);
         backgroundTask.execute();
 
-        populateListView();
+        PopulateListView();
     }
 
-    private void populateListView() {
+    private void PopulateListView() {
 
         db = mDatabaseHelper.getReadableDatabase();
 
@@ -67,7 +67,7 @@ public class Login extends AppCompatActivity {
         login.setAdapter(listAdapter);
     }
 
-    public void onClickCreate(View view) {
+    public void OnClickCreate(View view) {
         db = mDatabaseHelper.getWritableDatabase();
         String userName = editTextUserName.getText().toString().trim(); //trim name
 
@@ -81,6 +81,6 @@ public class Login extends AppCompatActivity {
         db.insert(BlackJackContract.BlackJackEntry.TABLE_NAME, null, contentValues);
         Toast.makeText(this, "User Added", Toast.LENGTH_LONG).show();
 
-        populateListView();
+        PopulateListView();
     }
 }

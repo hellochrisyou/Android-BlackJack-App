@@ -17,17 +17,13 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    StringBuilder playerHitStringBuilder, splitHitStringBuilder, dealerHitStringBuilder;
-    Card playerCard1, playerCard2, dealerCard1, dealerCard2;
-    int dealerSum = 0, playerSum = 0, playerSum2 = 0, splitSum = 0, splitSum2 = 0,
-        randomInt, finish = 0, bank = 200, bet = 10;
-    String dealerSumString, playerSumString, splitSumString, splitHitString,
-    playerHitString = "", dealerHitString, tmpString;
     boolean splitCheck = false, splitTurn = false, doubleDownCheck = true, clicked = false;
-    TextView viewPlayerCard1, viewPlayerCard2, viewDealerCard1, viewDealerCard2,
-    viewDealerSum, viewCardSum, viewDealerHit, viewSplitSum, viewHitCard,
-    viewSplitHit, viewCard2, viewBank, viewBet;
+    int dealerSum = 0, playerSum = 0, playerSum2 = 0, splitSum = 0, splitSum2 = 0, randomInt, finish = 0, bank = 200, bet = 10;
+    String dealerSumString, playerSumString, splitSumString, splitHitString, playerHitString = "", dealerHitString, tmpString;
+    StringBuilder playerHitStringBuilder, splitHitStringBuilder, dealerHitStringBuilder;
+    
+    Card playerCard1, playerCard2, dealerCard1, dealerCard2;
+    TextView viewPlayerCard1, viewPlayerCard2, viewDealerCard1, viewDealerCard2, viewDealerSum, viewCardSum, viewDealerHit, viewSplitSum, viewHitCard, viewSplitHit, viewCard2, viewBank, viewBet; 
     MediaPlayer oneUp, end, win, start, warp, musicSplit, push, split, stay, newGame;
     ImageView marioJumping;
     ObjectAnimator up, down;
@@ -36,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        refresh();
+        Refresh();
     }
 
-    public void refresh() {
+    public void Refresh() {
         oneUp = MediaPlayer.create(this, R.raw.spash_sound);
         end = MediaPlayer.create(this, R.raw.gameover);
         win = MediaPlayer.create(this, R.raw.win);
@@ -90,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         //randomize player Card 1
         randomInt = rand.nextInt(13) + 1;
-        startCardFunction();
+        StartCardFunction();
         if (randomInt == 1) {
             playerCard1.softAce = true;
             playerCard1.setValue(11);
@@ -104,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         }
         //ramdomize player Card 2
         randomInt = rand.nextInt(13) + 1;
-        startCardFunction();
+        StartCardFunction();
         if (randomInt == 1) {
             playerCard2.softAce = true;
             playerCard2.setValue(11);
@@ -123,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         }
         //randomize dealer Card 1
         randomInt = rand.nextInt(13) + 1;
-        startCardFunction();
+        StartCardFunction();
         if (randomInt == 1) {
             dealerCard1.softAce = true;
             dealerCard1.setValue(11);
@@ -137,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         }
         //ramdomize dealer Card 2
         randomInt = rand.nextInt(13) + 1;
-        startCardFunction();
+        StartCardFunction();
         if (randomInt == 1) {
             dealerCard2.softAce = true;
             dealerCard2.setValue(11);
@@ -155,11 +151,11 @@ public class MainActivity extends AppCompatActivity {
         playerHitStringBuilder = new StringBuilder();
         splitHitStringBuilder = new StringBuilder();
         dealerHitStringBuilder = new StringBuilder();
-        updateString();
-        display();
+        UpdateString();
+        Display();
     }
 
-    public void updateString() {
+    public void UpdateString() {
         dealerSumString = String.valueOf(dealerSum);
         playerSumString = String.valueOf(playerSum);
         splitSumString = String.valueOf(splitSum);
@@ -168,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         dealerHitString = dealerHitStringBuilder.toString();
     }
 
-    public void display() {
+    public void Display() {
         viewBet.setText(Integer.toString(bet));
         viewBank.setText(Integer.toString(bank));
         viewDealerSum.setText(dealerSumString);
@@ -191,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
         viewSplitHit.setText(splitHitString);
     }
 
-    public void gameOver() {
+    public void GameOver() {
         finish = 2;
         start.stop();
         timerMedia(0);
@@ -201,13 +197,13 @@ public class MainActivity extends AppCompatActivity {
             musicSplit.start();
             //dealer go
             while (dealerSum < 17) { //Dealer turn
-                dealerGo();
+                DealerGo();
             }
             if (dealerCard1.softAce == true) {
                 if (dealerSum > 21) {
                     dealerSum -= 10;
                     while (dealerSum < 17) {
-                        dealerGo();
+                        DealerGo();
                     }
                 }
             }
@@ -215,12 +211,12 @@ public class MainActivity extends AppCompatActivity {
                 if (dealerSum > 21) {
                     dealerSum -= 10;
                     while (dealerSum < 17) {
-                        dealerGo();
+                        DealerGo();
                     }
                 }
             }
-            updateString();
-            display();
+            UpdateString();
+            Display();
             if (playerSum > 21) {
                 Toast.makeText(this, "You Bust! Dealer Wins!", Toast.LENGTH_LONG).show();
                 bank -= bet;
@@ -268,13 +264,13 @@ public class MainActivity extends AppCompatActivity {
         }
         //dealer go
         while (dealerSum < 17) { //Dealer turn
-            dealerGo();
+            DealerGo();
         }
         if (dealerCard1.softAce == true) {
             if (dealerSum > 21) {
                 dealerSum -= 10;
                 while (dealerSum < 17) {
-                    dealerGo();
+                    DealerGo();
                 }
             }
         }
@@ -282,12 +278,12 @@ public class MainActivity extends AppCompatActivity {
             if (dealerSum > 21) {
                 dealerSum -= 10;
                 while (dealerSum < 17) {
-                    dealerGo();
+                    DealerGo();
                 }
             }
         }
-        updateString();
-        display();
+        UpdateString();
+        Display();
         if (dealerSum > 21) {
             Toast.makeText(this, "Dealer busts! You win!", Toast.LENGTH_LONG).show();
             bank += bet;
@@ -306,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickStay(View view) {
+    public void OnClickStay(View view) {
         if (clicked == false) {
             if (finish == 2) {
                 return;
@@ -324,16 +320,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //split Card
                 else {
-                    gameOver();
+                    GameOver();
                     return;
                 }
                 //player Card
             }
-            gameOver();
+            GameOver();
         }
     }
 
-    public void onClickSplit(View view) {
+    public void OnClickSplit(View view) {
         if (clicked == false) {
             if (finish == 2) {
                 return;
@@ -347,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "First Card Turn!", Toast.LENGTH_LONG).show();
                 playerSum = playerCard1.getValue();
                 splitSum = playerCard2.getValue();
-                updateString();
+                UpdateString();
                 timerMedia(1600);
                 split.start();
                 splitCheck = true;
@@ -355,7 +351,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickDoubleDown(View view) {
+    public void OnClickDoubleDown(View view) {
         if (clicked == false) {
             if (finish == 2) {
                 return;
@@ -367,12 +363,12 @@ public class MainActivity extends AppCompatActivity {
                 if (splitCheck == true) {
                     if (splitTurn == false) {
                         if (playerSum > 10) {
-                            faceCardPlayerFunction();
+                            FaceCardPlayerFunction();
                             splitTurn = true;
                         } else if (playerSum < 11) {
                             playerSum += randomInt;
                             playerHitStringBuilder.append((Integer.toString(randomInt) + " "));
-                            updateString();
+                            UpdateString();
                             splitTurn = true;
                         }
                         timerMedia(1000);
@@ -382,24 +378,24 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //split Card turn
                     else if (splitTurn == true) {
-                        faceCardSplitFunction();
+                        FaceCardSplitFunction();
                         splitSum += randomInt;
                         splitHitStringBuilder.append((Integer.toString(randomInt) + " "));
-                        gameOver();
+                        GameOver();
                         return;
                     }
                     //player Card
                 }
                 playerSum += randomInt;
                 playerHitStringBuilder.append((Integer.toString(randomInt) + " "));
-                updateString();
+                UpdateString();
                 finish = 2;
-                gameOver();
+                GameOver();
             }
         }
     }
 
-    public void onClickHit(View view) {
+    public void OnClickHit(View view) {
         if (clicked == false) {
             if (finish == 2) {
                 return;
@@ -408,11 +404,11 @@ public class MainActivity extends AppCompatActivity {
             randomInt = rand.nextInt(13) + 1;
             //split:player turn
             if (splitCheck == true && splitTurn == false) {
-                faceCardPlayerFunction();
+                FaceCardPlayerFunction();
                 if (randomInt < 11) {
                     playerSum += randomInt;
                     playerHitStringBuilder.append((Integer.toString(randomInt) + " "));
-                    updateString();
+                    UpdateString();
                 }
                 if (playerSum > 21 || playerSum2 > 21) {
                     splitTurn = true;
@@ -422,48 +418,48 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 timerMedia(1300);
-                jump();
+                Jump();
                 oneUp.start();
                 return;
             }
             //split Turn
             else if (splitCheck == true && splitTurn == true) {
-                faceCardSplitFunction();
+                FaceCardSplitFunction();
                 if (randomInt < 11) {
                     splitSum += randomInt;
                     splitHitStringBuilder.append((Integer.toString(randomInt) + ""));
-                    updateString();
+                    UpdateString();
                 }
                 if (splitSum > 21) {
                     finish = 2;
-                    gameOver();
+                    GameOver();
                     return;
                 }
                 timerMedia(1300);
-                jump();
+                Jump();
                 oneUp.start();
                 return;
             }
             //no split
             tmpString = Integer.toString(randomInt);
-            faceCardPlayerFunction();
+            FaceCardPlayerFunction();
             if (randomInt < 11) {
                 playerSum += randomInt;
                 playerHitStringBuilder.append(tmpString);
-                updateString();
+                UpdateString();
             }
             if (playerSum > 21) {
-                gameOver();
+                GameOver();
                 return;
             }
-            timerMedia(1300);
-            jump();
+            TimerMedia(1300);
+            Jump();
             oneUp.start();
             doubleDownCheck = false;
         }
     }
 
-    public void onClickNewGame(View view) {
+    public void OnClickNewGame(View view) {
         if (clicked == false) {
             timerMedia(3000);
             newGame.start();
@@ -476,7 +472,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickPlus(View view) {
+    public void OnClickPlus(View view) {
         if (bet == bank) {
             return;
         }
@@ -484,7 +480,7 @@ public class MainActivity extends AppCompatActivity {
         viewBet.setText(Integer.toString(bet));
     }
 
-    public void onClickMinus(View view) {
+    public void OnClickMinus(View view) {
         if (bet == 0) {
             return;
         }
@@ -492,7 +488,7 @@ public class MainActivity extends AppCompatActivity {
         viewBet.setText(Integer.toString(bet));
     }
 
-    public void dealerGo() {
+    public void DealerGo() {
         Random rand = new Random();
         randomInt = rand.nextInt(13) + 1;
         if (randomInt == 1) {
@@ -502,14 +498,14 @@ public class MainActivity extends AppCompatActivity {
             }
             dealerHitStringBuilder.append("A");
         } else {
-            startCardFunction();
+            StartCardFunction();
             dealerSum += randomInt;
             dealerHitStringBuilder.append(tmpString + " ");
-            updateString();
+            UpdateString();
         }
     }
 
-    public void startCardFunction() {
+    public void StartCardFunction() {
         tmpString = Integer.toString(randomInt);
         if (randomInt == 11) {
             randomInt = 10;
@@ -523,59 +519,59 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void faceCardPlayerFunction() {
+    public void FaceCardPlayerFunction() {
         if (randomInt == 1) {
             playerSum += 11;
             if (playerSum > 21) {
                 playerSum -= 10;
             }
             playerHitStringBuilder.append("A");
-            updateString();
+            UpdateString();
         } else if (randomInt == 11) {
             playerSum += 10;
             playerHitStringBuilder.append("J");
-            updateString();
+            UpdateString();
         } else if (randomInt == 12) {
             playerSum += 10;
             playerHitStringBuilder.append("Q");
-            updateString();
+            UpdateString();
         } else if (randomInt == 13) {
             playerSum += 10;
             playerHitStringBuilder.append("K");
-            updateString();
+            UpdateString();
         }
     }
 
-    public void faceCardSplitFunction() {
+    public void FaceCardSplitFunction() {
         if (randomInt == 1) {
             splitSum += 11;
             if (splitSum > 21) {
                 splitSum -= 10;
             }
             splitHitStringBuilder.append("A");
-            updateString();
+            UpdateString();
         } else if (randomInt == 11) {
             splitSum += 10;
             splitHitStringBuilder.append("J");
-            updateString();
+            UpdateString();
         } else if (randomInt == 12) {
             splitSum += 10;
             splitHitStringBuilder.append("Q");
-            updateString();
+            UpdateString();
         } else if (randomInt == 13) {
             splitSum += 10;
             splitHitStringBuilder.append("K");
-            updateString();
+            UpdateString();
         }
     }
 
-    public void timerMedia(final int time) {
+    public void TimerMedia(final int time) {
         Thread timer = new Thread() {
             public void run() {
                 try {
                     start.pause();
                     clicked = true;
-                    display();
+                    Display();
                     sleep(time);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -590,7 +586,7 @@ public class MainActivity extends AppCompatActivity {
         timer.start();
     }
 
-    public void jump() {
+    public void Jump() {
         up = ObjectAnimator.ofFloat(marioJumping, "translationY", 0 f, -114 f);
         down = ObjectAnimator.ofFloat(marioJumping, "translationY", -114 f, 0 f);
         up.setDuration(400);

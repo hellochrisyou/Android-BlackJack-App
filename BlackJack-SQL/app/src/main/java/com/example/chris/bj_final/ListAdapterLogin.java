@@ -16,9 +16,9 @@ import java.util.List;
  * Created by chris on 9/9/2017.
  */
 
-public class listAdapterLogin extends RecyclerView.Adapter < listAdapterLogin.ViewHolder > {
+public class ListAdapterLogin extends RecyclerView.Adapter < listAdapterLogin.ViewHolder > {
     ArrayList < ListItemLogin > itemLists = new ArrayList < > ();
-    listAdapterLogin(ArrayList < ListItemLogin > arrayList) {
+    ListAdapterLogin(ArrayList < ListItemLogin > arrayList) {
         this.itemLists = arrayList;
     }
     private Context context;
@@ -30,14 +30,14 @@ public class listAdapterLogin extends RecyclerView.Adapter < listAdapterLogin.Vi
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_login, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void OnBindViewHolder(ViewHolder holder, int position) {
         ListItemLogin listItemLogin = itemLists.get(position);
 
         holder.textName.setText(listItemLogin.getName());
@@ -45,7 +45,7 @@ public class listAdapterLogin extends RecyclerView.Adapter < listAdapterLogin.Vi
     }
 
     @Override
-    public int getItemCount() {
+    public int GetItemCount() {
         return itemLists.size();
     }
 

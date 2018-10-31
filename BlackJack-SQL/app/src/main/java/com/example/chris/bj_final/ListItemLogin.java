@@ -13,23 +13,23 @@ public class ListItemLogin {
     }
 
     public ListItemLogin(String name, int highScore) {
-        this.setName(name);
-        this.setHighScore(highScore);
+        this.SetName(name);
+        this.SetHighScore(highScore);
     }
 
-    public void setName(String name) {
+    public void SetName(String name) {
         this.name = name;
     }
 
-    public void setHighScore(int highScore) {
+    public void SetHighScore(int highScore) {
         this.highScore = highScore;
     }
 
-    public String getName() {
+    public String GetName() {
         return name;
     }
 
-    public int getHighScore() {
+    public int GetHighScore() {
         return highScore;
     }
 }

@@ -27,18 +27,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void OnCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_QUERY);
         Log.d("Database operations", "Table Created...");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+    public void OnUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL ("DROP TABLE IF EXISTS " + BlackJackContract.BlackJackEntry.TABLE_NAME);
         Log.d("Database operations" , "Database updated...");
     }
 
-    public void addUser(String name, int highScore, SQLiteDatabase db){
+    public void AddUser(String name, int highScore, SQLiteDatabase db){
         ContentValues contentValues = new ContentValues();
         contentValues.put (BlackJackContract.BlackJackEntry.COLUMN_NAME,name);
         contentValues.put(BlackJackContract.BlackJackEntry.COLUMN_HS,highScore);
@@ -46,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d("Database operations", "One row inserted...");
     }
 
-    public Cursor getInfo (SQLiteDatabase db){
+    public Cursor GetInfo (SQLiteDatabase db){
         String[] projection = {BlackJackContract.BlackJackEntry.COLUMN_NAME, BlackJackContract.BlackJackEntry.COLUMN_HS};
         Cursor cursor = db.query(BlackJackContract.BlackJackEntry.TABLE_NAME,projection, null, null, null, null, null);
         return cursor;
