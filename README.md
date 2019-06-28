@@ -1,3 +1,5 @@
+<img  src="https://chrisyou-backup-website.s3.amazonaws.com/assets/banner-blackjack.png" width="100%"/>
+
 # BlackJackSQLite
 BlackJack Android Game 
 Android mobile game that connects to SQLite using PHP with Apache.
